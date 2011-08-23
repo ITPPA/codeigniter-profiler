@@ -56,6 +56,12 @@ class MY_Profiler {
 
 	// --------------------------------------------------------------------
 
+	/**
+	 * Enable Section
+	 *
+	 * @param   string
+	 * @return 	object
+	 */
 	public function enable_section($name)
 	{
 		if(in_array($name, $this->_available_sections) AND ! in_array($name, $this->_enabled_sections))
@@ -68,6 +74,12 @@ class MY_Profiler {
 
 	// --------------------------------------------------------------------
 
+	/**
+	 * Disable section
+	 *
+	 * @param   string
+	 * @return  object
+	 */
 	public function disable_section($name)
 	{
 		if($key = array_search($name, $this->_enabled_sections))
@@ -105,6 +117,11 @@ class MY_Profiler {
 
 	// --------------------------------------------------------------------
 
+	/**
+	 * Run the profiler
+	 *
+	 * @return 	string
+	 */
 	public function run()
 	{
 		if( ! $this->_check_environment())
@@ -185,9 +202,9 @@ class MY_Profiler {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Compile Queries
+	 * Compile Database
 	 *
-	 * @return	string
+	 * @return	array
 	 */
 	protected function _compile_database()
 	{
@@ -299,6 +316,11 @@ class MY_Profiler {
 		);
 	}
 
+	/**
+	 * Compile request data
+	 *
+	 * @return 	array
+	 */
 	protected function _compile_request_data()
 	{
 		$types = array('get_data', 'post_data', 'cookie_data', 'file_data');
@@ -337,7 +359,7 @@ class MY_Profiler {
 	/**
 	 * Compile $_GET Data
 	 *
-	 * @return	string
+	 * @return	array
 	 */
 	protected function _compile_get_data()
 	{
@@ -374,7 +396,7 @@ class MY_Profiler {
 	/**
 	 * Compile $_POST Data
 	 *
-	 * @return string
+	 * @return array
 	 */
 	protected function _compile_post_data()
 	{
@@ -410,7 +432,7 @@ class MY_Profiler {
 	/**
 	 * Compile $_COOKIE Data
 	 *
-	 * @return string
+	 * @return array
 	 */
 	protected function _compile_cookie_data()
 	{
@@ -448,7 +470,7 @@ class MY_Profiler {
 	/**
 	 * Compile $_FILE Data
 	 *
-	 * @return string
+	 * @return array
 	 */
 	protected function _compile_file_data()
 	{
@@ -489,7 +511,7 @@ class MY_Profiler {
 	/**
 	 * Show query string
 	 *
-	 * @return	string
+	 * @return	array
 	 */
 	protected function _compile_uri_string()
 	{
@@ -528,7 +550,7 @@ class MY_Profiler {
 	/**
 	 * Show the controller and function that were called
 	 *
-	 * @return	string
+	 * @return	array
 	 */
 	protected function _compile_controller_info()
 	{
@@ -584,7 +606,7 @@ class MY_Profiler {
 	 *
 	 * Display total used memory
 	 *
-	 * @return	string
+	 * @return	array
 	 */
 	protected function _compile_memory_usage()
 	{
@@ -621,7 +643,7 @@ class MY_Profiler {
 	 *
 	 * Lists HTTP headers
 	 *
-	 * @return	string
+	 * @return	array
 	 */
 	protected function _compile_request_headers($excludes = array())
 	{
@@ -670,7 +692,7 @@ class MY_Profiler {
 	 *
 	 * Lists developer config variables
 	 *
-	 * @return	string
+	 * @return	array
 	 */
 	protected function _compile_config()
 	{
@@ -701,7 +723,7 @@ class MY_Profiler {
 	/**
 	 * Compile session userdata
 	 *
-	 * @return 	string
+	 * @return 	array
 	 */
 	protected function _compile_session_data()
 	{
@@ -732,6 +754,11 @@ class MY_Profiler {
 		);
 	}
 
+	/**
+	 * Compile loader
+	 *
+	 * @return 	array
+	 */
 	protected function _compile_loader()
 	{
 		$data = array();
@@ -844,7 +871,13 @@ class MY_Profiler {
 
 	// --------------------------------------------------------------------
 
-	private function _load_section($_section)
+	/**
+	 * Load section
+	 *
+	 * @param   string
+	 * @return 	string
+	 */
+	protected function _load_section($_section)
 	{
 		$_view = 'section';
 		$_profile = call_user_func(array($this, "_compile_$_section"));
@@ -864,7 +897,14 @@ class MY_Profiler {
 
 	// --------------------------------------------------------------------
 
-	private function _load_view($view, $data = array())
+	/**
+	 * Load view
+	 *
+	 * @param   string
+	 * @param   array
+	 * @return 	string
+	 */
+	protected function _load_view($view, $data = array())
 	{
 		if( ! empty($data) AND is_array($data))
 		{
@@ -880,7 +920,12 @@ class MY_Profiler {
 
 	// --------------------------------------------------------------------
 
-	private function _check_environment()
+	/**
+	 * Check environment
+	 *
+	 * @return 	bool
+	 */
+	protected function _check_environment()
 	{
 		if($this->CI->input->is_ajax_request() OR $this->CI->input->is_cli_request())
 		{
