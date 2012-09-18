@@ -47,16 +47,16 @@
 <!-- Profiler CSS -->
 <style>
 #codeigniter-profiler {
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
+	position:fixed;
+	bottom:0;
+	left:5%;
+	width:90%;
 	background:white;
 	border-bottom:10px solid #494949;
 	font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
-	-moz-box-shadow: 0 2px 15px #999;
-	-webkit-box-shadow: 0 2px 15px #999;
-	box-shadow: 0 2px 15px #999;
+	-moz-box-shadow: 0 0px 15px #999;
+	-webkit-box-shadow: 0 0px 15px #999;
+	box-shadow: 0 0px 15px #999;
 }
 
 /* -------------------------------------------------- */
@@ -69,35 +69,36 @@
 /* -------------------------------------------------- */
 
 #codeigniter-profiler-toggle-button {
-	position:absolute;
+	position:fixed;
 	background:#494949;
 	border:1px solid #494949;
 	color:white;
 	padding:5px 20px 0;
 	right:300px;
+	bottom:0px;
 	cursor:pointer;
 	font-size:11px;
 	text-transform:uppercase;
 	background: #494949; /* Old browsers */
-	background: -moz-linear-gradient(top, #494949 0%, #494949 50%, #333333 51%, #333333 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#494949), color-stop(50%,#494949), color-stop(51%,#333333), color-stop(100%,#333333)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #494949 0%,#494949 50%,#333333 51%,#333333 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #494949 0%,#494949 50%,#333333 51%,#333333 100%); /* Opera11.10+ */
-	background: -ms-linear-gradient(top, #494949 0%,#494949 50%,#333333 51%,#333333 100%); /* IE10+ */
+	background: -moz-linear-gradient(bottom, #494949 0%, #494949 50%, #333333 51%, #333333 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left bottom, left bottom, color-stop(0%,#494949), color-stop(50%,#494949), color-stop(51%,#333333), color-stop(100%,#333333)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(bottom, #494949 0%,#494949 50%,#333333 51%,#333333 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(bottom, #494949 0%,#494949 50%,#333333 51%,#333333 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(bottom, #494949 0%,#494949 50%,#333333 51%,#333333 100%); /* IE10+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#494949', endColorstr='#333333',GradientType=0 ); /* IE6-9 */
-	background: linear-gradient(top, #494949 0%,#494949 50%,#333333 51%,#333333 100%); /* W3C */
+	background: linear-gradient(bottom, #494949 0%,#494949 50%,#333333 51%,#333333 100%); /* W3C */
 	text-shadow:0 0 3px #000;
-	-moz-border-radius-bottomleft: 5px;
-	-moz-border-radius-bottomright: 5px;
-	-webkit-border-bottom-left-radius: 5px;
-	-webkit-border-bottom-right-radius: 5px;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
 	font-family:Arial;
 	letter-spacing:.5px;
-	-moz-box-shadow: 0 2px 15px #999;
-	-webkit-box-shadow: 0 2px 15px #999;
-	box-shadow: 0 2px 10px #666;
+	-moz-box-shadow: 0 2px 10px #999;
+	-webkit-box-shadow: 0 2px 10px #999;
+	box-shadow: 1px 1px 10px #666;
 }
 
 /* -------------------------------------------------- */
